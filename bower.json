@@ -1,0 +1,16 @@
+{
+  "name": "node-contacts",
+  "version": "0.0.0",
+  "authors": [
+    "Victor Torres"
+  ],
+  "description": "A contact manager webapp written in NodeJS",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,116 @@
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+body {
+  background-color: #FAFAFA;
+  color: #212121;
+  font-family: 'Noto Sans', sans-serif;
+  max-width: 1000px; }
+
+.sidebar {
+  z-index: 2;
+  width: 50px;
+  overflow: hidden;
+  position: absolute;
+  float: left;
+  top: 0;
+  left: 0;
+  height: 100%;
+  min-height: 650px;
+  transition: width 0.3s ease, padding-left 0.3s ease;
+  box-shadow: 8px 10px 12px rgba(0, 0, 0, 0.2);
+  background-color: #536DFE;
+  color: #FFFFFF; }
+  .sidebar ul {
+    list-style: none;
+    padding: 0; }
+  .sidebar:target {
+    width: 300px; }
+    .sidebar:target li {
+      list-style: none; }
+      .sidebar:target li .button {
+        width: 300px;
+        height: 35px;
+        background-color: #536DFE;
+        color: #212121;
+        border: 0;
+        font-size: 1.2em;
+        font-style: inherit;
+        text-align: justify; }
+        .sidebar:target li .button:hover {
+          background-color: #8698fe; }
+        .sidebar:target li .button:active {
+          top: 5px; }
+    .sidebar:target ul {
+      padding-left: 20px; }
+    .sidebar:target hr {
+      visibility: visible; }
+    .sidebar:target .hide {
+      display: table-row;
+      color: #FFFFFF; }
+  .sidebar #menu {
+    font-size: 50px;
+    text-align: justify; }
+  .sidebar #menu-add {
+    float: right;
+    font-size: 58px;
+    width: 50px;
+    background-color: #536DFE;
+    border: 0;
+    color: #212121; }
+    .sidebar #menu-add:hover {
+      background-color: #3F51B5; }
+  .sidebar hr {
+    color: #212121;
+    visibility: hidden;
+    background-color: #212121;
+    border: 0; }
+  .sidebar a {
+    font-size: 18px;
+    color: #212121;
+    text-decoration: none; }
+    .sidebar a:hover {
+      background-color: #3F51B5; }
+
+.header {
+  margin-left: 42px;
+  z-index: 0; }
+  .header .top-accent {
+    padding: 0 2%;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    background-color: #512da8;
+    height: 20px; }
+  .header .content {
+    padding: 0 2%;
+    background-color: #673ab7;
+    top: 20px;
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    color: #FFFFFF; }
+    .header .content p {
+      color: #d1c4e9; }
+
+.main {
+  margin-left: 42px;
+  z-index: 0;
+  padding: 0 2%;
+  top: 220px;
+  width: 800px;
+  color: #212121;
+  position: absolute;
+  display: inline-block; }
+
+.pseudo-image {
+  position: relative;
+  float: right;
+  width: 300px;
+  height: 300px;
+  background-color: #b6b6b6;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  z-index: 1; }
+
+.hide {
+  display: none; }
+
+/*# sourceMappingURL=main.css.map */
