@@ -46,9 +46,18 @@ module.exports = function(grunt) {
     },
 
     concat: {
-      angular: {
-        files: {
-          'public/dist/vendor/angular.js': ['public/src/vendor/angular/angular.js']
+      'dev': {
+        angular: {
+          files: {
+            'public/dist/vendor/angular.js': ['public/src/vendor/angular/angular.js']
+          }
+        }
+      },
+      'prod': {
+        angular: {
+          files: {
+            'public/dist/vendor/angular.min.js': ['public/src/vendor/angular/angular.min.js']
+          }
         }
       }
     },
@@ -89,5 +98,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
 
   grunt.registerTask('default', ['sass', 'cssmin', 'jshint', 'uglify', 'concurrent']);
-  grunt.registerTask('bower', ['bower-install-simple', 'concat']);
+  grunt.registerTask('production', ['sass', 'cssmin', 'jshint', 'uglify', 'bower-install-simple:prod', 'concat:prod', 'concurrent'])
+  grunt.registerTask('bower', ['bower-install-simple:dev', 'concat:dev']);
 }
