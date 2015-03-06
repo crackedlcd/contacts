@@ -15,7 +15,9 @@ module.exports = function(app, router) {
 
     // POST /api/contacts
     .post(function(req, res) {
+
       var contact = new Contact();
+
       contact.firstName = req.body.firstName;
       contact.lastName = req.body.lastName;
       contact.email = req.body.email;
@@ -27,15 +29,16 @@ module.exports = function(app, router) {
         res.json({
           message: 'Contact created!'
         });
-
       });
     });
 
   router.route('/api/contacts/:contact_id')
+
     .get(function(req, res) {
       Contact.findById(req.params.contact_id, function(err, contact) {
         if (err)
           res.send(err);
+        
         res.json(todo);
       });
     });
