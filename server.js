@@ -1,12 +1,15 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-
 var mongoose = require('mongose');
+var morgan = require('morgan');
+
+var Contact = require('app/models/contact');
 
 var uristring = process.env.MONGOLAB_URI || 'mongodb://127.0.0.1'
 
 app.use(express.static(__dirname + '/public'));
+app.use(morgan('dev'));
 
 var port = process.env.PORT || 8080;
 
@@ -16,7 +19,7 @@ mongoose.connect(uristring, function(err, res) {
   } else {
     console.log('Succeeded connecting to: ' + uristring);
   }
-})
+});
 
 var router = express.Router();
 require('./app/routes')(app, router);
