@@ -1,11 +1,13 @@
 angular.module('contactCtrl', [])
 
-  .controller('mainCtrl', function($scope, $http, Contacts) {
+  .controller('contactCtrl', function($scope, $http, Contacts) {
     $scope.formData = {};
+    $scope.selectedContact;
 
     Contacts.get()
       .success(function(data) {
         $scope.contacts = data;
+        $scope.selectedContact = $scope.contacts[0];
       });
 
     $scope.createContact = function() {
@@ -24,4 +26,8 @@ angular.module('contactCtrl', [])
           $scope.contacts = data;
         });
     };
+
+    $scope.setSelectedContact = function(contact) {
+      $scope.selectedContact = contact;
+    }
   });
