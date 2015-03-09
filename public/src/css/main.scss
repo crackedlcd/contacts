@@ -9,6 +9,23 @@ $color-accent: #536DFE;
 
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans);
 
+@media(max-width: 800px) {
+  body {
+    max-width: 100%;
+  }
+
+  .main {
+    position: relative;
+    max-width: 300px;
+    left: 20%;
+  }
+
+  .pseudo-image {
+    // float: none;
+  }
+}
+
+
 body {
   background-color: #FAFAFA;
   color: $color-text;
@@ -134,7 +151,7 @@ body {
   width: 800px;
   color: $color-text;
   position: absolute;
-  display: inline-block;
+  display: block;
 }
 
 .pseudo-image {

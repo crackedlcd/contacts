@@ -1,4 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+@media (max-width: 800px) {
+  body {
+    max-width: 100%; }
+
+  .main {
+    position: relative;
+    max-width: 300px;
+    left: 20%; } }
 body {
   background-color: #FAFAFA;
   color: #212121;
@@ -99,7 +107,7 @@ body {
   width: 800px;
   color: #212121;
   position: absolute;
-  display: inline-block; }
+  display: block; }
 
 .pseudo-image {
   position: relative;

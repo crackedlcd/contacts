@@ -2,3 +2,5 @@
 node_modules/
 public/src/vendor
 public/dist/
+public/src/css/.sass-cache/
+public/src/css/main.css.map
