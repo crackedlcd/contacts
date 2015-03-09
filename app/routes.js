@@ -1,8 +1,8 @@
-var Contact = require('./models/todo');
+var Contact = require('./models/contact');
 
 module.exports = function(app, router) {
 
-  router.route('/api/contacts')
+  router.route('/contacts')
 
     // GET /api/contacts
     .get(function(req, res){
@@ -22,6 +22,7 @@ module.exports = function(app, router) {
       contact.lastName = req.body.lastName;
       contact.email = req.body.email;
       contact.phone = req.body.phone;
+      contact.name = contact.firstName + " " + contact.lastName;
 
       contact.save(function(err) {
         if (err)
@@ -32,7 +33,7 @@ module.exports = function(app, router) {
       });
     });
 
-  router.route('/api/contacts/:contact_id')
+  router.route('/contacts/:contact_id')
 
     // GET /api/contacts/:contact_id
     .get(function(req, res) {
@@ -74,11 +75,13 @@ module.exports = function(app, router) {
         res.json({
           message: 'Successfully deleted'
         });
-        
+
       });
     });
 
   app.get('/', function(req, res) {
-    res.sendfile('public/views/index.html');
+    res.sendfile('./public/views/index.html');
   });
+
+  app.use('/api', router);
 };
