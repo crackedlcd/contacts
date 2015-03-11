@@ -23,6 +23,7 @@ module.exports = function(app, router) {
       contact.email = req.body.email;
       contact.phone = req.body.phone;
       contact.name = contact.firstName + " " + contact.lastName;
+      contact.description = req.body.description;
 
       contact.save(function(err) {
         if (err)
@@ -53,6 +54,8 @@ module.exports = function(app, router) {
         contact.lastName = req.body.lastName;
         contact.emal = req.body.email;
         contact.phone = req.body.phone
+        contact.fullName = contact.firstName + " " + req.body.lastName;
+        contact.description = req.body.description;
 
         contact.save(function(err) {
           if (err)
