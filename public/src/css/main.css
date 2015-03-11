@@ -1,12 +1,4 @@
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans);
-@media (max-width: 800px) {
-  body {
-    max-width: 100%; }
-
-  .main {
-    position: relative;
-    max-width: 300px;
-    left: 20%; } }
 body {
   background-color: #FAFAFA;
   color: #212121;
@@ -120,5 +112,28 @@ body {
 
 .hide {
   display: none; }
+
+@media (max-width: 1080px) {
+  body {
+    max-width: 100%; }
+
+  .sidebar {
+    min-height: 800px;
+    overflow-y: visible; }
+    .sidebar #menu {
+      font-size: 40px; }
+
+  .main {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 400px;
+    left: 20%; }
+    .main h1 {
+      font-size: 36px; }
+    .main p {
+      font-size: 18px; }
+
+  .pseudo-image {
+    margin: 0 auto; } }
 
 /*# sourceMappingURL=main.css.map */

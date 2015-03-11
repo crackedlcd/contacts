@@ -32,9 +32,9 @@
   <h1>{{ selectedContact.name }}</h1>
   <div class="pseudo-image">{{ selectedContact.name}}'s Image</div>
   <p>{{ selectedContact.description }}</p>
-  <p><strong>Location:</strong> Springfield</p>
+  <p><strong>Location:</strong> {{ selectedContact.location }}</p>
   <p><strong>Phone:</strong> {{ selectedContact.phone }}</p>
-  <p><strong>E-Mail</strong> {{ selectedContact.email }}</p>
+  <p><strong>E-Mail:</strong> {{ selectedContact.email }}</p>
 </div>
 
 <script src="../src/vendor/angular/angular.js"></script>
