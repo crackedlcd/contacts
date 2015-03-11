@@ -20,6 +20,15 @@ angular.module('contactCtrl', [])
       }
     };
 
+    $scope.updateContact = function(id) {
+      if(!$.isEmptyObject($scope.formData)) {
+        Contacts.update(id)
+          .success(function(data) {
+            $scope.contacts = data;
+          });
+      }
+    }
+
     $scope.deleteContact = function(id) {
       Contacts.delete(id)
         .success(function(data) {
