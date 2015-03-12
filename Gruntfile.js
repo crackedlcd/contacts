@@ -14,9 +14,18 @@ module.exports = function(grunt) {
     },
 
     sass: {
-      dist: {
-        files: {
-          'public/dist/css/main.css': 'public/src/css/main.css'
+      "dev": {
+        dist: {
+          files: {
+            'public/src/css/main.css': 'public/src/css/main.scss'
+          }
+        }
+      },
+      "prod": {
+        dist: {
+          files: {
+            'public/dist/css/main.css': 'public/src/css/main.scss'
+          }
         }
       }
     },
@@ -97,7 +106,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-bower-install-simple');
   grunt.loadNpmTasks('grunt-contrib-concat');
 
-  grunt.registerTask('default', ['sass', 'cssmin', 'jshint', 'uglify', 'concurrent']);
-  grunt.registerTask('production', ['sass', 'cssmin', 'jshint', 'uglify', 'bower-install-simple:prod', 'concat:prod', 'concurrent'])
+  grunt.registerTask('default', ['sass:prod', 'cssmin', 'jshint', 'uglify', 'concurrent']);
+  grunt.registerTask('production', ['sass:prod', 'cssmin', 'jshint', 'uglify', 'bower-install-simple:prod', 'concat:prod', 'concurrent'])
   grunt.registerTask('bower', ['bower-install-simple:dev', 'concat:dev']);
+  grunt.registerTask('dev', ['sass:dev']);
 }
