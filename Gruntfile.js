@@ -109,5 +109,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['sass:prod', 'cssmin', 'jshint', 'uglify', 'concurrent']);
   grunt.registerTask('production', ['sass:prod', 'cssmin', 'jshint', 'uglify', 'bower-install-simple:prod', 'concat:prod', 'concurrent'])
   grunt.registerTask('bower', ['bower-install-simple:dev', 'concat:dev']);
-  grunt.registerTask('dev', ['sass:dev']);
+  grunt.registerTask('dev', ['sass:dev', 'jshint', 'concurrent']);
 }
