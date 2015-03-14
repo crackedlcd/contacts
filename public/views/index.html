@@ -8,17 +8,17 @@
 
 
 <body ng-controller="contactCtrl">
-<div class="sidebar" id="sidebar-expand">
+<nav class="sidebar" id="sidebar-expand">
   <ul>
-    <span><a href="#sidebar-expand" id="menu">&#9776;</a> <input type="submit" class="hide" id="menu-add" value="+"></span>
+    <span><a href="#sidebar-expand" id="menu">&#9776;</a> <input type="submit" class="hide" id="menu-add" value="+" ui-sref="add"></span>
     <hr />
-    <div ng-repeat="contact in contacts | orderBy:'firstName'"><li class="hide" ><input type="submit" class="button" ng-value="contact.name" ng-click="setSelectedContact(contact)"/></li>
+    <div ng-repeat="contact in contacts | orderBy:'lastName'"><li class="hide" ><input type="submit" class="button" ng-value="contact.name" ng-click="setSelectedContact(contact)" ui-sref="show"/></li>
     <hr />
     </div>
     <li><a href="#" class="hide">Close</a></li>
     <hr />
   </ul>
-</div>
+</nav>
 
 <div class="header">
   <span class="top-accent"></span>
@@ -29,15 +29,11 @@
 </div>
 
 <div class="main">
-  <h1>{{ selectedContact.name }}</h1>
-  <div class="pseudo-image">{{ selectedContact.name}}'s Image</div>
-  <p>{{ selectedContact.description }}</p>
-  <p><strong>Location:</strong> {{ selectedContact.location }}</p>
-  <p><strong>Phone:</strong> {{ selectedContact.phone }}</p>
-  <p><strong>E-Mail:</strong> {{ selectedContact.email }}</p>
+  <div ui-view></div>
 </div>
 
 <script src="../src/vendor/angular/angular.js"></script>
+<script src="../src/vendor/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="../src/js/app.js"></script>
 <script src="../src/js/contactService.js"></script>
 <script src="../src/js/contactCtrl.js"></script>

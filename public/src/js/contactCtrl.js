@@ -2,7 +2,8 @@ angular.module('contactCtrl', [])
 
   .controller('contactCtrl', function($scope, $http, Contacts) {
     $scope.formData = {};
-    $scope.selectedContact;
+    $scope.selectedContact = {};
+    $scope.partial = 'show';
 
     Contacts.get()
       .success(function(data) {
@@ -27,7 +28,7 @@ angular.module('contactCtrl', [])
             $scope.contacts = data;
           });
       }
-    }
+    };
 
     $scope.deleteContact = function(id) {
       Contacts.delete(id)
@@ -38,5 +39,10 @@ angular.module('contactCtrl', [])
 
     $scope.setSelectedContact = function(contact) {
       $scope.selectedContact = contact;
-    }
+    };
+    
+    $scope.setPartial = function(partial) {
+      $scope.partial = partial;
+    };
+
   });
